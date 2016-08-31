@@ -145,6 +145,7 @@ function creandoMatrices() {
     boton.onclick = function() {
         calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB)
     }
+    document.getElementById('container').innerHTML = ''
     document.getElementById('container').appendChild(boton)
 }
 
