@@ -88,18 +88,16 @@ function validarNumero(parametros) {
 
 function convertirAArreglo(filas, columnas, tabla) {
     var arreglo = new Array()
-    contador += 2;
     for (i = 0; i < filas; i++) {
-        contador += 4;
         for (j = 0; j < columnas; j++) {
             if (arreglo[i] === undefined) {
                 arreglo[i] = new Array()
             }
-            contador += 13;
+
             arreglo[i][j] = tabla.querySelectorAll('[data-fila="' + i + '"][data-columna="' + j + '"]')[0].value
         }
     }
-    f = 13 * Math.pow(filas, 3) + 7 * Math.pow(columnas, 2) + (4 * columnas) + 2;
+
     return arreglo;
 
 
@@ -145,7 +143,7 @@ function creandoMatrices() {
     boton.onclick = function() {
         calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB)
     }
-    document.getElementById('container').innerHTML = ''
+document.getElementById('container').innerHTML = ''
     document.getElementById('container').appendChild(boton)
 }
 
@@ -153,11 +151,13 @@ function sumatoria(i, j, matrizA, matrizB) {
     //https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices
     var n = matrizB.length //o matrizA[0].length
     var sumatoria = 0;
-    contador += 2;
+    contador=contador+2;
     for (var r = 0; r < n; r++) {
-        contador += 4;
+      contador=contador+8;
             sumatoria += parseFloat(matrizA[i][r]) * parseFloat(matrizB[r][j])
     }
+    //f = ((filasA * ((9 * columnasB) + 8)) + 4) * matrizB.length + 6;
+    f = ((n * ((9 * n) + 8)) + 4) * matrizB.length + 6;
     return sumatoria
 
 
@@ -196,8 +196,11 @@ function calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB) {
     var matrizC = new Array()
     var filasA = matrizA.length
     var columnasB = matrizB[0].length
+    contador+=2;
     for (var i = 0; i < filasA; i++) {
+      contador=contador+4;
         for (var j = 0; j < columnasB; j++) {
+          contador=contador+9;
             if (matrizC[i] === undefined) {
                 matrizC[i] = new Array()
             }
@@ -209,7 +212,8 @@ function calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB) {
     tabla.setAttribute('class', 'center')
     document.getElementById('container').appendChild(tabla)
     dibujarArregloMatriz(matrizC, tabla)
-
+    f=contador;
     window.alert("Contador " + contador + "\n" + "Ecuacion Temporal " + f);
+    contador=0;
     //window.alert("Funcion Temporal."+f);
 }
