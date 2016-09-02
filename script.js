@@ -86,6 +86,34 @@ function validarNumero(parametros) {
     return true
 }
 
+function calcularEcuacion(filasA, columnasA, filasB, columnasB) {
+    {
+        a = Array();
+        o = filasA
+        m = columnasA
+        p = filasB
+        q = columnasB
+        if (m == p) {
+            movim = 0
+            movim = 2
+            for (i = 0; i < o; i++) {
+                movim += 4
+                for (j = 0; j < m; j++) {
+                    movim += 7
+                    for (k = 0; k < q; k++) {
+                        movim += 13
+                    }
+                }
+            }
+            f = ((p * ((13 * q) + 7)) + 4) * o + 2
+            objeto1=document.getElementById('formulaContador')
+            objeto1.innerHTML="Calculo Ecuacion Temporal. " + f+ "\n"+ "Calculo Contador " + movim
+        } else {
+            alert("Tamaño no valido")
+        }
+    }
+}
+
 function convertirAArreglo(filas, columnas, tabla) {
     var arreglo = new Array()
     for (i = 0; i < filas; i++) {
@@ -141,9 +169,10 @@ function creandoMatrices() {
     boton.setAttribute('class', 'boton-central')
     boton.setAttribute('value', 'Calcular Multiplicación')
     boton.onclick = function() {
+        calcularEcuacion(filasA, columnasA, filasB, columnasB)
         calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB)
     }
-document.getElementById('container').innerHTML = ''
+    document.getElementById('container').innerHTML = ''
     document.getElementById('container').appendChild(boton)
 }
 
@@ -151,13 +180,9 @@ function sumatoria(i, j, matrizA, matrizB) {
     //https://es.wikipedia.org/wiki/Multiplicaci%C3%B3n_de_matrices
     var n = matrizB.length //o matrizA[0].length
     var sumatoria = 0;
-    contador=contador+2;
     for (var r = 0; r < n; r++) {
-      contador=contador+8;
-            sumatoria += parseFloat(matrizA[i][r]) * parseFloat(matrizB[r][j])
+        sumatoria += parseFloat(matrizA[i][r]) * parseFloat(matrizB[r][j])
     }
-    //f = ((filasA * ((9 * columnasB) + 8)) + 4) * matrizB.length + 6;
-    f = ((n * ((9 * n) + 8)) + 4) * matrizB.length + 6;
     return sumatoria
 
 
@@ -196,11 +221,8 @@ function calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB) {
     var matrizC = new Array()
     var filasA = matrizA.length
     var columnasB = matrizB[0].length
-    contador+=2;
     for (var i = 0; i < filasA; i++) {
-      contador=contador+4;
         for (var j = 0; j < columnasB; j++) {
-          contador=contador+9;
             if (matrizC[i] === undefined) {
                 matrizC[i] = new Array()
             }
@@ -212,8 +234,5 @@ function calcular(filasA, columnasA, matrizA, filasB, columnasB, matrizB) {
     tabla.setAttribute('class', 'center')
     document.getElementById('container').appendChild(tabla)
     dibujarArregloMatriz(matrizC, tabla)
-    f=contador;
-    window.alert("Contador " + contador + "\n" + "Ecuacion Temporal " + f);
-    contador=0;
-    //window.alert("Funcion Temporal."+f);
+    contador = 0
 }
