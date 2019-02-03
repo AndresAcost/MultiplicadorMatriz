@@ -1,27 +1,27 @@
 .left {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .right {
-    float: right;
-    width: 50%;
+  float: right;
+  width: 50%;
 }
 
 .boton-central {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .percent {
-    width: 90%;
+  width: 90%;
 }
 
 .formulario {
-    padding: 10px;
-    background-color: #eee;
-    width: 100px;
+  padding: 10px;
+  background-color: #eee;
+  width: 100px;
 }
 
 .panel {}
@@ -29,6 +29,14 @@
 #container {}
 
 .center {
-    width: auto;
-    margin: 0px auto;
+  width: auto;
+  margin: 0px auto;
+}
+
+.titulo {
+  text-align: center;
+}
+
+body {
+  background-color: rgba(10, 201, 156, 0.43);
 }

@@ -2,45 +2,50 @@
 <html>
 
 <head>
-    <title>Multiplicador de matrices</title>
-    <meta charset='utf-8'>
-    <link href="style.css" rel="stylesheet" />
+  <title>Multiplicador de matrices</title>
+  <meta charset='utf-8'>
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
-    <input class="boton-central" onclick="creandoMatrices()" type="button" value="Crear Matrices">
-    <br>
-    <div align="center">
-        <div align="left" class="left panel">
-            <h5>Dimensiones matriz A</h5>
-            <form class="formulario" id="dimensionesA">
-                Filas:
-                <br>
-                <input name="filas" size="5" type="text">
-                <br> Columnas:
-                <br>
-                <input name="columnas" size="5" type="text">
-            </form>
-            <hr class="percent" />
-            <table id="matrizA"></table>
-        </div>
-        <div align="right" class="right panel">
-            <h5>Dimensiones matriz B</h5>
-            <form class="formulario" id="dimensionesB">
-                Filas:
-                <br>
-                <input name="filas" size="5" type="text">
-                <br> Columnas:
-                <br>
-                <input name="columnas" size="5" type="text">
-            </form>
-            <hr class="percent" />
-            <table id="matrizB"></table>
-        </div>
-        <div id="formulaContador"></div>
+  <div class="titulo">
+    <h5>FORMULACIÓN, GESTIÓN Y EVALUACIÓN DE PROYECTOS <br>Docente: Edgar Eduardo Diaz Cely.</h5>
+    <h6>By <br> Leidy Marcela Aldana Burgos Cod. 20152010019 <br>
+      Andres Mauricio Acosta Pulido Cod. 20142020111</h6>
+  </div>
+  <input class="boton-central" onclick="creandoMatrices()" type="button" value="Crear Matrices">
+  <br>
+  <div align="center">
+    <div align="left" class="left panel">
+      <h5>Dimensiones matriz A</h5>
+      <form class="formulario" id="dimensionesA">
+        Filas:
+        <br>
+        <input name="filas" size="5" type="text">
+        <br> Columnas:
+        <br>
+        <input name="columnas" size="5" type="text">
+      </form>
+      <hr class="percent" />
+      <table id="matrizA"></table>
     </div>
-    <div id="container"></div>
-    <script src="script.js"></script>
+    <div align="right" class="right panel">
+      <h5>Dimensiones matriz B</h5>
+      <form class="formulario" id="dimensionesB">
+        Filas:
+        <br>
+        <input name="filas" size="5" type="text">
+        <br> Columnas:
+        <br>
+        <input name="columnas" size="5" type="text">
+      </form>
+      <hr class="percent" />
+      <table id="matrizB"></table>
+    </div>
+    <div id="formulaContador"></div>
+  </div>
+  <div id="container"></div>
+  <script src="script.js"></script>
 </body>
 
 </html>
